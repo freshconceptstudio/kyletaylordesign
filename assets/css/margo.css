@@ -1,0 +1,836 @@
+/** ==================================================
+
+bopthemes
+
+	- Project: Margo
+	- Version: 1.0
+	- Last change: 16/08/2016
+
+==========
+
+TABLE OF CONTENT
+
+	01. Imports
+	02. Grid system
+	03. Basic settings
+	04. Typography
+	05. Forms
+	06. Misc
+	07. Loading
+	08. Header
+	09. Nav
+	10. Main & sections
+	11. Headline
+	12. Hero
+	13. Grid
+	14. Works
+	15. Project
+	16. Blog
+	17. Contact
+	18. Footer
+	19. Media
+
+================================================== */
+
+
+
+/** 01. Imports */
+
+	@import url('http://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+	@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
+	@import '../font-awesome/css/font-awesome.css';
+
+
+
+/** 02. Grid system */
+
+	.container {
+		width: 85%;
+		margin: 0 auto;
+		position: relative
+	}
+
+	.column {
+		float: left;
+		padding: 0 15px;
+		position: relative
+	}
+
+	.column:first-child { padding-left: 0 }
+	.column:last-child { padding-right: 0 }
+	.column.col-1 { width: 8.333% }
+	.column.col-2 { width: 16.666% }
+	.column.col-3 { width: 25% }
+	.column.col-4 { width: 33.333% }
+	.column.col-5 { width: 41.666% }
+	.column.col-6 { width: 50% }
+	.column.col-7 { width: 58.333% }
+	.column.col-8 { width: 66.666% }
+	.column.col-9 { width: 75% }
+	.column.col-10 { width: 83.333% }
+	.column.col-11 { width: 91.666% }
+	.column.col-12 { width: 100% }
+
+	.column.offset-by-1 { margin-left: 8.333% }
+	.column.offset-by-2 { margin-left: 16.666% }
+	.column.offset-by-3 { margin-left: 25% }
+	.column.offset-by-4 { margin-left: 33.333% }
+	.column.offset-by-5 { margin-left: 41.666% }
+	.column.offset-by-6 { margin-left: 50% }
+	.column.offset-by-7 { margin-left: 58.333% }
+	.column.offset-by-8 { margin-left: 66.666% }
+	.column.offset-by-9 { margin-left: 75% }
+	.column.offset-by-10 { margin-left: 83.333% }
+	.column.offset-by-11 { margin-left: 91.666% }
+
+	.row { margin-bottom: 30px }
+	.row:last-child { margin-bottom: 0 }
+
+	.float-right { float: right }
+	.float-left { float: left }
+
+	.container::after,
+	.row::after,
+	.clearfix::after {
+		content: '';
+		display: block;
+		clear: both
+	}
+
+
+
+/** 03. Basic settings */
+
+	html { overflow-y: scroll }
+
+	body {
+		font-family: 'Playfair Display';
+		color: #666;
+		line-height: 1.8;
+		background: #ededed;
+		-webkit-font-smoothing: antialiased
+	}
+
+	*,
+	::before,
+	::after {
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		border: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box
+	}
+
+	::selection {
+		color: #c7ac75;
+		background: #c7ac75
+	}
+
+	::-moz-selection {
+		color: #c7ac75;
+		background: #c7ac75
+	}
+
+
+
+/** 04. Typography */
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer
+	}
+
+	a.link { color: #c7ac75 }
+	a.link:hover { color: #141516 }
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 400;
+		font-style: normal;
+		color: #141516;
+		margin-bottom: 15px
+	}
+
+	h1:last-child,
+	h2:last-child,
+	h3:last-child,
+	h4:last-child,
+	h5:last-child,
+	h6:last-child { margin-bottom: 0 }
+
+	h1 { font-size: 50px }
+	h2 { font-size: 42px }
+	h3 { font-size: 36px }
+	h4 { font-size: 30px }
+	h5 { font-size: 24px }
+	h6 { font-size: 18px }
+
+	p { margin-bottom: 30px }
+	p:last-child { margin-bottom: 0 }
+
+
+
+/** 05. Forms */
+
+	form { margin-bottom: 30px }
+	form:last-child { margin-bottom: 0 }
+
+	.form-group { margin-bottom: 30px }
+	.form-group:last-child { margin-bottom: 0 }
+
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="text"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"],
+	textarea,
+	select {
+		width: 100%;
+		height: 50px;
+		font-family: 'Source Sans Pro';
+		font-size: inherit;
+		padding: 0 15px;
+		background: #fff
+	}
+
+	textarea {
+		max-width: 100%;
+		padding: 15px;
+		min-height: 120px
+	}
+
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		height: 40px;
+		text-transform: uppercase;
+		font-family: 'Source Sans Pro';
+		color: #fff;
+		padding: 0 15px;
+		background: 0;
+		cursor: pointer;
+		background: #c7ac75
+	}
+
+	label {
+		display: block;
+		text-transform: uppercase;
+		font-family: 'Source Sans Pro';
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 15px
+	}
+
+
+
+/** 06. Misc */
+
+	img { max-width: 100% }
+
+	.small-title {
+		text-transform: uppercase;
+		font-family: 'Source Sans Pro';
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 15px
+	}
+
+
+
+/** 07. Loading */
+
+	#site-loading {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		background: rgba(20, 21, 22, .7);
+		-webkit-transition: all .7s cubic-bezier(0.7, .3, 0, 1) .3s;
+		transition: all .7s cubic-bezier(0.7, .3, 0, 1) .3s
+	}
+
+	#site-loading.hide {
+		height: 0;
+		visibility: hidden
+	}
+
+	.loader {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: 3px solid #fff;
+		border-top: 3px solid transparent;
+		position: absolute;
+		bottom: 100px;
+		left: 50%;
+		margin-left: -10px;
+		-webkit-animation: loading .7s linear infinite;
+		animation: loading .7s linear infinite;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out
+	}
+
+	#site-loading.hide .loader {
+		bottom: -24px;
+		visibility: hidden
+	}
+
+	@-webkit-keyframes loading {
+		100% {
+			-webkit-transform: rotate(360deg)
+		}
+
+	}
+
+	@keyframes loading {
+		100% {
+			transform: rotate(360deg)
+		}
+
+	}
+
+
+
+/** 08. Header */
+
+	#site-header { height: 150px }
+
+	#header-logo { margin-top: 61px }
+
+	#burger {
+		width: 20px;
+		height: 14px;
+		margin-top: 68px;
+		position: relative;
+		cursor: pointer
+	}
+
+	#burger-icon {
+		width: 20px;
+		height: 14px;
+		position: absolute;
+		top: 0;
+		right: 0
+	}
+
+	#burger-icon .icon-bar {
+		width: 100%;
+		height: 2px;
+		position: absolute;
+		right: 0;
+		background: #141516
+	}
+
+	#burger-icon .icon-bar.top { top: 0 }
+	#burger-icon .icon-bar.middle { top: 6px }
+	#burger-icon .icon-bar.bottom { bottom: 0 }
+
+
+
+/** 09. Nav */
+
+	#site-nav {
+		width: 35%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		right: -35%;
+		z-index: 10;
+		background: #c7ac75;
+		-webkit-transition: all .5s cubic-bezier(0.7, .3, 0, 1);
+		transition: all .5s cubic-bezier(0.7, .3, 0, 1)
+	}
+
+	#site-nav.nav-open { right: 0 }
+
+	#menu {
+		list-style: none;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 50px;
+		text-align: right
+	}
+
+	#menu li { margin-bottom: 15px }
+	#menu li:last-child { margin-bottom: 0 }
+
+	#menu li a {
+		position: relative;
+		font-size: 24px;
+		color: #fff
+	}
+
+	#menu li .submenu {
+		list-style: none;
+		position: relative
+	}
+
+	#menu li .submenu li { margin-bottom: 0 }
+
+	#menu li .submenu li a {
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: rgba(255, 255, 255, .7)
+	}
+
+	#menu li .submenu li a:hover { color: #fff }
+
+	#nav-close {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 50px;
+		right: 50px;
+		cursor: pointer
+	}
+
+	#nav-close::before,
+	#nav-close::after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		margin-top: -1px
+	}
+
+	#nav-close::before {
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg)
+	}
+
+	#nav-close::after {
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg)
+	}
+
+
+
+/** 10. Main & sections */
+
+	#site-main {
+		max-width: 1200px;
+		margin: 50px auto;
+		background: #fff
+	}
+
+	#main-overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 9;
+		background: rgba(20, 21, 22, .7);
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out
+	}
+
+	#main-overlay.nav-open {
+		opacity: 1;
+		visibility: visible
+	}
+
+	.grey-section {
+		padding: 100px 0;
+		background: #f7f7f7
+	}
+
+
+
+/** 11. Headline */
+
+	.headline {
+		text-align: center;
+		padding: 60px 0 100px
+	}
+
+	.headline-content {
+		max-width: 700px;
+		margin: 0 auto
+	}
+
+	.headline .title {
+		font-size: 30px;
+		color: #c7ac75;
+		margin-bottom: 15px
+	}
+
+	.headline .title.project-title { margin-bottom: 30px }
+	.headline .title:last-child { margin-bottom: 0 }
+
+
+
+/** 12. Hero */
+
+	.hero { position: relative }
+
+	.hero-image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background-size: cover;
+		background-position: center;
+	}
+
+
+
+/** 13. Grid */
+
+	.entry-image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1
+	}
+
+
+
+/** 14. Works */
+
+	.work-entry {
+		border-left: 4px solid #FFF;
+		border-top: 4px solid #FFF;
+	}
+
+	.works { background: #f7f7f7 }
+
+	.work-entry .info {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background: rgba(20, 21, 22, .9);
+		opacity: 0;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out
+	}
+
+	.work-entry:hover .info { opacity: 1 }
+
+	.work-entry .content {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		z-index: 1;
+		text-align: center;
+		padding: 0 50px;
+		-webkit-transform: translatey(-50%);
+		transform: translatey(-50%)
+	}
+
+	.work-entry .content .title {
+		font-family: 'Source Sans Pro';
+		font-weight: 600;
+		color: #fff;
+		top: -15px
+	}
+
+	.work-entry .content .cat {
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: rgba(255, 255, 255, .7);
+		top: 15px
+	}
+
+	.work-entry .content .title,
+	.work-entry .content .cat {
+		position: relative;
+		opacity: 0;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out
+	}
+
+	.work-entry:hover .content .title,
+	.work-entry:hover .content .cat {
+		top: 0;
+		opacity: 1
+	}
+
+
+
+/** 15. Project */
+
+	.project-categories span {
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: #b3b3b3;
+		margin-right: 15px
+	}
+
+	.project-categories span:last-child { margin-right: 0 }
+
+	#project img {
+		display: block;
+		margin: 0 auto
+	}
+
+
+	.superhuman-screens img {
+		max-width: 90%;
+		width: 300px;
+		margin: 40px !important;
+		display: inline !important;
+	}
+
+	.superhuman-screens img.large {
+		width: 90%;
+	}
+
+	.half {
+		float: left;
+		width: 50%;
+		text-align: center;
+	}
+
+	.full {
+		float: left;
+		width: 100%;
+		text-align: center;
+	}
+
+/** 16. Blog */
+
+	.blog { background: #f7f7f7 }
+
+	.blog-entry-info {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background: rgba(20, 21, 22, .7)
+	}
+
+	.blog-entry-info .content {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 1;
+		padding: 50px
+	}
+
+	.blog-entry-info .content .date {
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: rgba(255, 255, 255, .7)
+	}
+
+	.blog-entry-info .content .title {
+		font-family: 'Source Sans Pro';
+		font-size: 20px;
+		font-weight: 600;
+		color: #fff
+	}
+
+	.post-arrow {
+		position: absolute;
+		bottom: 50px;
+		left: 50px;
+		width: 20px;
+		height: 2px;
+		background: #fff;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out
+	}
+
+	.post-arrow::before {
+		content: '';
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		top: -4px;
+		right: 0;
+		border-top: 2px solid #fff;
+		border-right: 2px solid #fff;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg)
+	}
+
+	.blog-entry-info:hover .post-arrow { width: 50px }
+
+	.single-post { padding: 100px 0 }
+
+	.post-header { margin-bottom: 50px }
+
+	.post-header .title {
+		font-size: 30px;
+		color: #141516
+	}
+
+	.post-metas {
+		padding-bottom: 15px;
+		border-bottom: 3px solid #e6e6e6
+	}
+
+	.post-metas span {
+		margin-right: 15px;
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: #b3b3b3
+	}
+
+	.post-footer { margin-top: 100px }
+
+	.share-link {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		border-radius: 50%;
+		text-align: center;
+		color: #fff;
+		margin-right: 5px;
+		background: #e6e6e6
+	}
+
+	.share-link.share-facebook { background: #4d70a8 }
+	.share-link.share-twitter { background: #00bbf2 }
+	.share-link.share-gplus { background: #e3401d }
+	.share-link.share-pinterest { background: #cb3737 }
+
+	.comments-title { margin-bottom: 50px }
+
+	.comments-list {
+		list-style: none;
+		margin-bottom: 50px
+	}
+
+	.comments-list .comment { margin-bottom: 50px }
+
+	.comments-list .comment:last-child { margin-bottom: 0 }
+
+	.comments-list .comment .children {
+		list-style: none;
+		margin: 60px 0 0 50px
+	}
+
+	.comment-user {
+		float: left;
+		width: 100px;
+		position: relative
+	}
+
+	.comment-user img { border-radius: 50% }
+
+	.comment-content { margin-left: 120px }
+
+	.comment-content .date {
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: #b3b3b3
+	}
+
+	.comment-content .comment-text { margin-top: 15px }
+
+
+
+/** 17. Contact */
+
+	#contact-form { margin-top: 30px }
+
+	#contact-messages {
+		font-family: 'Source Sans Pro';
+		font-size: 14px;
+		color: #b3b3b3
+	}
+
+
+
+/** 18. Footer */
+
+	#site-footer {
+		text-align: center;
+		padding: 100px 0
+	}
+
+	.copy { font-size: 14px }
+
+	.social { margin-top: 30px }
+	.social .social-link { margin-right: 30px }
+	.social .social-link:last-child { margin-right: 0 }
+	.social .social-link:hover { color: #c7ac75 }
+
+
+
+/** 19. Media */
+
+	@media screen and (max-width:1024px) {
+		.container { width: 90% }
+		.half {
+			float: left;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width:768px) {
+		.container { width: 70% }
+		.column { width: 100% !important }
+		.column { margin: 0 0 30px !important; padding: 0 }
+		.column:last-child { margin-bottom: 0 }
+
+		#site-main { margin: 0 }
+		#site-header { height: 100px }
+		#header-logo { margin-top: 36px }
+		#burger { margin-top: 43px }
+
+		#site-nav {
+			width: 80%;
+			right: -80%
+		}
+
+		.headline-content { max-width: 100% }
+
+		form .row,
+		form .row .column { margin-bottom: 15px !important }
+
+		form .row:last-child,
+		form .row .column:last-child { margin-bottom: 0 !important }
+
+	}
+
+	@media screen and (max-width:480px) {
+		.container { width: 90% }
+
+		#menu { padding: 30px }
+
+		#nav-close { top: 30px; right: 30px }
+
+		.blog-entry-info .content { padding: 30px }
+		.post-arrow { bottom: 30px; left: 30px }
+
+		.comment-user { width: 50px }
+		.comment-content { margin-left: 70px }
+
+	}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

@@ -1,0 +1,152 @@
+
+/** --------------------------------------------------
+
+bopthemes
+
+	- File: base.less
+
+-------------------------------------------------- */
+
+
+
+/** BASIC SETTINGS */
+
+	html { overflow-y: scroll; }
+
+	body {
+		font-family: @font1;
+		color: darken(@white_color, 60%);
+		line-height: 1.8;
+		background: darken(@white_color, 7%);
+
+		-webkit-font-smoothing: antialiased;
+	}
+
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		border: 0;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+
+	::selection {
+		color: @primary_color;
+		background: @primary_color;
+	}
+
+	::-moz-selection {
+		color: @primary_color;
+		background: @primary_color;
+	}
+
+
+
+/** TYPOGRAPHY */
+
+	// links
+	a {
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+
+		&.link { color: @primary_color; }
+		&.link:hover { color: @dark_color; }
+	}
+
+	// headings
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		font-style: normal;
+		color: @dark_color;
+		margin-bottom: 15px;
+
+		&:last-child { margin-bottom: 0; }
+	}
+
+	h1 { font-size: 50px; }
+	h2 { font-size: 42px; }
+	h3 { font-size: 36px; }
+	h4 { font-size: 30px; }
+	h5 { font-size: 24px; }
+	h6 { font-size: 18px; }
+
+	// paragraphs
+	p { margin-bottom: 30px; }
+	p:last-child { margin-bottom: 0; }
+
+
+
+/** FORMS */
+
+	form { margin-bottom: 30px; }
+	form:last-child { margin-bottom: 0; }
+
+	.form-group { margin-bottom: 30px; }
+	.form-group:last-child { margin-bottom: 0; }
+
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="text"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"],
+	textarea,
+	select {
+		width: 100%;
+		height: 50px;
+		font-family: @font2;
+		font-size: inherit;
+		padding: 0 15px;
+		background: @white_color;
+	}
+
+	textarea {
+		max-width: 100%;
+		padding: 15px;
+		min-height: 120px;
+	}
+
+	// buttons
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		height: 40px;
+		text-transform: uppercase;
+		font-family: @font2;
+		color: @white_color;
+		padding: 0 15px;
+		background: none;
+		cursor: pointer;
+		background: @primary_color;
+	}
+
+	label {
+		display: block;
+		text-transform: uppercase;
+		font-family: @font2;
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
+
+
+
+/** MISC */
+
+	img { max-width: 100%; }
+
+	.small-title {
+		text-transform: uppercase;
+		font-family: @font2;
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
